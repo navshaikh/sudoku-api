@@ -18,7 +18,7 @@ class SudokuAPITesT(unittest.TestCase):
     def assert_response(self, response, data_length, puzzles, solutions, \
                         status, messages):
         ''' Given a response, unpack the payload and test that client receives
-            the right format and contents. Sudoku API will return a  response
+            the right format and contents. Sudoku API will return a response
             of the format:
 
             {
@@ -49,6 +49,7 @@ class SudokuAPITesT(unittest.TestCase):
 
    
     def test_missing_key_in_form(self):
+        # Send an invalid key 'sudoku1' instead of 'sudoku'
         response = self.client.post('/', data={'sudoku1':self.sudoku.puzzle})
         self.assertEqual(response.status_code, 400)
         self.assertIn('sudoku', response.data)
@@ -70,7 +71,7 @@ class SudokuAPITesT(unittest.TestCase):
         self.assert_response(response,1 , [''], [None], ['error'], ['Invalid'])
 
     def test_empty_post(self):
-       #No form data provided
+       # No form data provided
        response = self.client.post('/')
        self.assertEqual(response.status_code, 400)
 
