@@ -37,11 +37,12 @@ By default, the endpoint is exposed on the localhost at:
 `http://127.0.0.1:5000`
 
 ## Resource Information
-|&nbsp; | &nbsp;|
-| ------------- |-------------|
-| Verb   | POST |
-| Format | JSON or Key-value |
-| Content-Type | application/json or application/x-www-form-urlencoded |
+
+**Verb**: POST
+
+**Format**: JSON or Key-value
+
+**Content-Type**: application/json or application/x-www-form-urlencoded
 
 ## Example Requests
 
