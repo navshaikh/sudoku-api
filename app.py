@@ -2,9 +2,10 @@ from flask import abort
 from flask import Flask
 from flask import request, jsonify
 from sudoku import sudoku
+from flask_cors import CORS
 
 app = Flask(__name__)
-
+CORS(app)
 
 def prepare_response(puzzle, solution, status='OK', message=None):
     return {'puzzle': puzzle, 'solution': solution,
